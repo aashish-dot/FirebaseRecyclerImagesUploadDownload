@@ -31,6 +31,7 @@ import info.camposha.firebaserecyclerimagesuploaddownload.R;
 
 public class UploadActivity extends AppCompatActivity{
 
+
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private Button chooseImageBtn;
@@ -39,7 +40,7 @@ public class UploadActivity extends AppCompatActivity{
     private EditText descriptionEditText;
     private ImageView chosenImageView;
     private ProgressBar uploadProgressBar;
-
+    private Uri aashish;
     private Uri mImageUri;
 
     private StorageReference mStorageRef;
@@ -94,7 +95,24 @@ public class UploadActivity extends AppCompatActivity{
                 && data != null && data.getData() != null) {
             mImageUri = data.getData();
 
-            Picasso.with(this).load(mImageUri).into(chosenImageView);
+            //   Picasso.with(this).load(mImageUri).into(chosenImageView);
+            mStorageRef=FirebaseStorage.getInstance().getReference().child("teachers_uploads"+mImageUri.getLastPathSegment());
+            mStorageRef.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    mStorageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            aashish=uri;
+                        }
+                    })     ;
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+
+                }
+            });
         }
     }
 
@@ -128,7 +146,7 @@ public class UploadActivity extends AppCompatActivity{
 
                             Toast.makeText(UploadActivity.this, "Teacher  Upload successful", Toast.LENGTH_LONG).show();
                             Teacher upload = new Teacher(nameEditText.getText().toString().trim(),
-                                    taskSnapshot.getDownloadUrl().toString(),
+                                    aashish.toString(),
                                     descriptionEditText.getText ().toString ());
 
                             String uploadId = mDatabaseRef.push().getKey();
