@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "688566133849",
+    "firebase_url": "https://fir-recyclerimagesupload-df7f5.firebaseio.com",
+    "project_id": "fir-recyclerimagesupload-df7f5",
+    "storage_bucket": "fir-recyclerimagesupload-df7f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688566133849:android:09f6ed4e037d186c8efd48",
+        "android_client_info": {
+          "package_name": "info.camposha.firebaserecyclerimagesuploaddownload"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688566133849-rnftjn42vf47m0m7u7adh86poj6gjm65.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "info.camposha.firebaserecyclerimagesuploaddownload",
+            "certificate_hash": "99953e1cd637cf3ca5572f5412376b270f0cf8a4"
+          }
+        },
+        {
+          "client_id": "688566133849-l7pce85vgskg7suec0k3o9e32bqqj5kq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7ZQqFNygUUZAELSCpjT-yZ4NcT9SPHCI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688566133849-l7pce85vgskg7suec0k3o9e32bqqj5kq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

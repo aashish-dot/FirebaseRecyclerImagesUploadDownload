@@ -3,6 +3,8 @@
     package="info.camposha.firebaserecyclerimagesuploaddownload">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MANAGE_APP_TOKENS"/>
+
 
     <application
         android:allowBackup="true"
